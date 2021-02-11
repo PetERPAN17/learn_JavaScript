@@ -8,12 +8,17 @@
 </head>
 <body>
     <script>
-        var nums = new Array();
+        var data = [
+                        {kor:30, eng:70, math:80}
+                    ];
 
-        nums[3] = 57;
+        var Json_data = JSON.stringify(data);
 
-        console.log(nums[2]);
-        console.log(nums);
+        console.log(Json_data);
+
+        var data = JSON.parse(Json_data);
+
+        console.log(data);
 
     </script>
 </body>
