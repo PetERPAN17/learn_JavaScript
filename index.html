@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        var data = [
-                        {kor:30, eng:70, math:80}
-                    ];
+        // var f_add = new Function('x, y', 'return x+y');
 
-        var Json_data = JSON.stringify(data);
+        // var f_add = function (x, y) {
+        //     return x + y;
+        // };
 
-        console.log(Json_data);
+        function f_add(x, y) {
 
-        var data = JSON.parse(Json_data);
+            console.log(arguments);
 
-        console.log(data);
+            return x + y;
+        }
+        document.write(f_add(5, 5, 3, 'hello'));
 
     </script>
 </body>
+
 </html>
