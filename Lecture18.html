@@ -10,38 +10,30 @@
 
 <body>
     <script>
-        // var a = 20;
-
-        var variable = function (value) {
-            var a = value;
-            console.log('variable');
-            console.log(a);
-            return function () {
-                return a += 1;
-            }
-        }
         
-        var aaResult = variable(10);
-        console.log(aaResult());
-        var abResult = variable(20);
-        console.log(aaResult());
-        var acResult = variable(30);
-        console.log(aaResult());
-        var adResult = variable(40);
-        console.log(aaResult());
-        var aeResult = variable(50);
-        console.log(aaResult());
+        // var x = prompt("x", 0);
+        // var y = prompt("y", 0);
 
-        console.log(window);
-        console.log(window.aaResult);
-        document.write(window.aaResult);
-        document.write('<br />');
+        // console.log(x = parseInt(x));
+        // console.log(y = parseInt(y));
 
-        aaResult = null;
+        // console.log(x + y);
 
-        console.log(window);
-        console.log(window.aaResult);
-        document.write(window.aaResult);
+        var a = parseInt("abc");
+
+        console.log(a);
+
+        var b = parseInt("abc12");
+
+        console.log(b);
+
+        var c = parseInt("12abc");
+
+        console.log(c);
+
+        var select = confirm("Really?");
+
+        console.log(select);
 
     </script>
 </body>

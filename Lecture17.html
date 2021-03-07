@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var a = 20;
+
+        var variable = function (value) {
+            var a = value;
+            console.log('variable');
+            console.log(a);
+            return function () {
+                return a += 1;
+            }
+        }
+        
+        var aaResult = variable(10);
+        console.log(aaResult());
+        var abResult = variable(20);
+        console.log(aaResult());
+        var acResult = variable(30);
+        console.log(aaResult());
+        var adResult = variable(40);
+        console.log(aaResult());
+        var aeResult = variable(50);
+        console.log(aaResult());
+
+        console.log(window);
+        console.log(window.aaResult);
+        document.write(window.aaResult);
+        document.write('<br />');
+
+        aaResult = null;
+
+        console.log(window);
+        console.log(window.aaResult);
+        document.write(window.aaResult);
+
+    </script>
+</body>
+
+</html>
