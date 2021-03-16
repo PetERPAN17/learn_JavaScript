@@ -22,12 +22,22 @@ window.addEventListener('load', function () {
     var btnAdd = ex2Sec.getElementsByClassName('btn-add')[0];
     var txtResult = ex2Sec.getElementsByClassName('txt-result')[0];
 
-    // var inputs = ex2Sec.getElementsByTagName('input');
+    btnAdd.onclick = function() {
+        var x = parseInt(txtX.value);
+        var y = parseInt(txtY.value);
 
-    // var txtX = inputs[0];
-    // var txtY = inputs[1];
-    // var btnAdd = inputs[2];
-    // var txtResult = inputs[3];
+        txtResult.value = x + y;
+    }
+});
+
+// ex3
+window.addEventListener('load', function () {
+    var SecEx3 = document.getElementById('ex3');
+
+    var txtX = SecEx3.querySelector("input[name='x']");
+    var txtY = SecEx3.querySelector("input[name='y']");
+    var btnAdd = SecEx3.querySelector("input[name='btn-add']");
+    var txtResult = SecEx3.querySelector("[name='result']");
 
     btnAdd.onclick = function() {
         var x = parseInt(txtX.value);
