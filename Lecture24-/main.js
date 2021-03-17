@@ -46,3 +46,17 @@ window.addEventListener('load', function () {
         txtResult.value = x + y;
     }
 });
+
+// ex4
+window.addEventListener('load', function () {
+    var SecEx4 = document.getElementById('ex4');
+    var box = SecEx4.querySelector('.box');
+    var input1 = box.children[0];
+    var input2 = box.children[1];
+    
+    input1.value = 'input1';
+    input2.value = 'input2';
+
+    var nodes= box.childNodes;
+    console.log(nodes);
+});
