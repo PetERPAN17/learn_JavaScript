@@ -58,5 +58,42 @@ window.addEventListener('load', function () {
     input2.value = 'input2';
 
     var nodes= box.childNodes;
-    console.log(nodes);
+    // console.log(nodes);
+});
+
+// ex5
+window.addEventListener('load', function () {
+    var Sec = document.querySelector('#ex5');
+    var srcInput = Sec.querySelector('.src-input');
+    var selectImg = Sec.querySelector('.selecet-img');
+    var changeBtn = Sec.querySelector('.change-btn');
+    var img = Sec.querySelector('.img');
+    var colorInput = Sec.querySelector('.color-input');
+
+    changeBtn.onclick = function(){
+        img.src = 'img/' + srcInput.value;
+        // img.src = 'img/' + selectImg.value;
+
+        // img.style['border-color'] = colorInput.value;
+        img.style.borderColor = colorInput.value;
+        console.log(img.className);
+    };
+});
+
+// ex6
+window.addEventListener('load', function () {
+    var sec = document.querySelector('#ex6');
+    var titleInput = sec.querySelector('.title-input');
+    var menuListDiv = sec.querySelector('.menu-list');
+    var AddBtn = sec.querySelector('.add-btn');
+    var DelBtn = sec.querySelector('.del-btn');
+
+    AddBtn.onclick = function(){
+        var txtNode = document.createTextNode(titleInput.value);
+        menuListDiv.appendChild(txtNode);
+    };
+
+    DelBtn.onclick = function(){
+        menuListDiv.removeChild(menuListDiv.childNodes[0]);
+    };
 });
