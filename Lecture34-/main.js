@@ -43,18 +43,18 @@ window.addEventListener("load", function () {
 });
 
 //Ex8-노드 삽입과 바꾸기
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
 
     var section = document.querySelector("#section8");
-    
-    var noticeList =section.querySelector(".notice-list"); 
+
+    var noticeList = section.querySelector(".notice-list");
     var tbodyNode = noticeList.querySelector("tbody");
     var upButton = section.querySelector(".up-button");
     var downButton = section.querySelector(".down-button");
 
     var currentNode = tbodyNode.firstElementChild;//.children[0];
 
-    downButton.onclick = function(){
+    downButton.onclick = function () {
         var nextNode = currentNode.nextElementSibling;
         if (nextNode == null) {
             alert('No more next to moving.');
@@ -64,7 +64,7 @@ window.addEventListener("load", function(){
         currentNode.insertAdjacentElement('beforebegin', nextNode);
     };
 
-    upButton.onclick = function(){
+    upButton.onclick = function () {
         var previousNode = currentNode.previousElementSibling;
         if (previousNode == null) {
             alert('No more previous to moving.');
@@ -72,6 +72,40 @@ window.addEventListener("load", function(){
         }
         // tbodyNode.insertBefore(currentNode, previousNode);
         currentNode.insertAdjacentElement('afterend', previousNode);
+    };
+
+});
+
+
+//Ex9-다중 노드선택 방법과 일괄삭제, 노드의 자리바꾸기
+window.addEventListener("load", function () {
+
+    var section = document.querySelector("#section9");
+
+    var noticeList = section.querySelector(".notice-list");
+    var tbody = noticeList.querySelector("tbody");
+    var allCheckbox = section.querySelector(".overall-checkbox");
+    var delButton = section.querySelector(".del-button");
+    var swapButton = section.querySelector(".swap-button");
+
+    allCheckbox.onchange = function () {
+        var checkInputs = tbody.querySelectorAll('input[type="checkbox"]');
+        checkInputs.forEach(element => {
+            element.checked = allCheckbox.checked;
+        });
+    };
+
+    delButton.onclick = function () {
+        var checkInputs = tbody.querySelectorAll('input[type="checkbox"]:checked');
+
+        checkInputs.forEach(element => {
+            element.parentElement.parentElement.remove();    
+        });
+    };
+
+    swapButton.onclick = function () {
+
+
     };
 
 });
