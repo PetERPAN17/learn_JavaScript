@@ -104,8 +104,20 @@ window.addEventListener("load", function () {
     };
 
     swapButton.onclick = function () {
+        var checkedInputs = tbody.querySelectorAll('input[type="checkbox"]:checked');
 
+        if (checkedInputs.length !== 2) {
+            alert('Must choose the only two items.');
+            return;
+        }
 
+        var trs = [];
+        checkedInputs.forEach(element => {
+            trs.push(element.parentElement.parentElement);
+        });
+
+        var cloneNode = trs[0].cloneNode(true);
+        trs[1].replaceWith(cloneNode);
+        trs[0].replaceWith(trs[1]);
     };
-
 });
